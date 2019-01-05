@@ -1,7 +1,9 @@
-const express = require('express');
+const app = require('express');
 
-// setting up express app
-const app = express();
+app.get('/', function(req, res){
+   console.log('GET request');
+   res.end();
+});
 
 // listen for requests
 app.listen(process.env.port || 4000, function(){
