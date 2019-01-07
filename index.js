@@ -1,4 +1,10 @@
-const app = require('express');
+//const app = require('express');
+
+const express = require('express');
+
+// set up express app
+const app = express();
+
 
 app.get('/', function(req, res){
    console.log('GET request');
