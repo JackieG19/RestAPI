@@ -7,11 +7,16 @@ router.get('./ninjas', function(req, res){
 });
 // add a new ninja to the db
 router.post('./ninjas', function(req, res){
+    console.log(req.body);
     res.send({type: 'POST'});
 });
 // update a ninja to the database
 router.put('./ninjas/:id', function(req, res){
-    res.send({type: 'PUT'});
+    res.send({
+        type: 'PUT',
+        name: req.body.name,
+        rank: req.body.rank
+    });
 });
 // delete a ninja from the database
 router.get('./ninjas/:id', function(req, res){
