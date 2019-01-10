@@ -8,19 +8,19 @@ const mongoose = require('mongoose');
 // set up express app
 const app = express();
 
-<<<<<<< HEAD
-// postman ver 6.5
-//app.use(bodyParser.json());
-=======
 // connect to mongo database
 mongoose.connect('mongoddb//localhost/ninjago');
 mongoose.Promise = global.Promise;
 
-app.use(bodyParser.json());
->>>>>>> SaveToMongoDB
 
 // initialize routes
 app.use('/api', require('./routes/api'));
+
+// error handling 
+app.use(function(err, req, res, next){
+   console.log(err); 
+   res.status(422).send({error: err.message});
+});
 
 // listen for requests
 app.listen(process.env.port || 4000, function(){
