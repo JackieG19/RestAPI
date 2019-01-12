@@ -1,28 +1,30 @@
 const express = require('express');
-
-// postman ver 6.5
-// const bodyParser = require('body-parser');
-
+const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+
+var myHost = process.env.IP;
 
 // set up express app
 const app = express();
 
 // connect to mongo database
-mongoose.connect('mongoddb//localhost/ninjago');
+mongoose.connect('mongodb://' + myHost + '/ninjago');
 mongoose.Promise = global.Promise;
 
+//app.use(express.static('public'));
+
+app.use(bodyParser.json());
 
 // initialize routes
-app.use('/api', require('./routes/api'));
+app.use('/api', require('./routes/api.js'));
 
 // error handling 
 app.use(function(err, req, res, next){
-   console.log(err); 
-   res.status(422).send({error: err.message});
+  console.log(err); 
+  res.status(422).send({error: err.message});
 });
 
 // listen for requests
-app.listen(process.env.port || 4000, function(){
+app.listen(process.env.PORT, process.env.IP, function(){
     console.log('now listening for request');
 });
