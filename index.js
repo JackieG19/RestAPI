@@ -11,12 +11,13 @@ const app = express();
 mongoose.connect('mongodb://' + myHost + '/ninjago');
 mongoose.Promise = global.Promise;
 
-//app.use(express.static('public'));
+//set up static files
+app.use(express.static('public'));
 
 app.use(bodyParser.json());
 
 // initialize routes
-app.use('/api', require('./routes/api.js'));
+app.use('/api', require('./routes/api'));
 
 // error handling 
 app.use(function(err, req, res, next){

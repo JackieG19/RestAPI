@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title>Ninjago</title>
         <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-        <link href="/styles.css" rel="stylesheet" />
+        <link href="style.css" rel="stylesheet" />
     </head>
     <body>
 
@@ -14,18 +14,19 @@
             <div id="ninjas"></div>
         </div>
 
-        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-        <script src="https://unpkg.com/react@15/dist/react.js"></script>
-        <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script src="https://unpkg.com/react@15/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
         
-         <!-- Create React Component -->
-        <script type="text/babel">
+    <!-- Create React Component -->
+    <script type="text/babel">
         var Ninjas = React.createClass({
             getInitialState: function(){
                 return({
                     ninjas: []
                 });
             },
+            
             render: function(){
                 var ninjas = this.state.ninjas;
                 ninjas = ninjas.map(function(ninja, index){
@@ -38,6 +39,7 @@
                         </li>
                     );
                 });
+                
                 return(
                     <div id="ninja-container">
                         <form id="search" onSubmit={this.handleSubmit}>
@@ -51,6 +53,7 @@
                     </div>
                 );
             },
+            
             handleSubmit: function(e){
                 e.preventDefault();
                 var lng = this.refs.lng.value;
@@ -65,7 +68,8 @@
                 });
             }
         });
+        
         ReactDOM.render(<Ninjas />, document.getElementById('ninjas'));
-        </script>
+    </script>
     </body>
 </html>
