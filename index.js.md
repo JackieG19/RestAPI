@@ -20,7 +20,17 @@ const app = express();
 
 // **connect to mongo database
 mongoose.connect('mongodb://' + myHost + '/ninjago');
+// connect method is used and passes a connection 
+// string so we can go out and find the database
+// ('protocol':// + connecting to localhost + '/database')
+
+//*Side Note* 
+// Although in the beginning the database doesn't exist yet. 
+// When we connect from this application, mongoose is going out 
+// see that it doesn't exist and its going to create it for us.
+
 mongoose.Promise = global.Promise;
+// setting Promise to global because mongoose version of the promise is deprecated
 
 
 // **set up static files
