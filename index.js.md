@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 // body-parser analyze into parts of your request and converts it into a format 
 // from which you can easily extract relevant information that you may need.
 
-
+// Using Node.js `require()`
 const mongoose = require('mongoose');
 
 var myHost = process.env.IP;
