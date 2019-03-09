@@ -34,8 +34,9 @@ router.post('/ninjas', function(req, res, next){
 
 // **update a ninja in the db
 router.put('/ninjas/:id', function(req, res, next){
-// a PUT request for the router(/is the route which is refer to the get request/:and the parameter of a specific ninja
-// callback function(pass in a request and response object)) 
+/* a PUT request for the router(/is the route which is refer 
+   to the get request/:and the parameter of a specific ninja
+ callback function(pass in a request and response object)) */
 
     Ninja.findByIdAndUpdate({_id: req.params.id}, req.body).then(function(){
         Ninja.findOne({_id: req.params.id}).then(function(ninja){
@@ -46,8 +47,9 @@ router.put('/ninjas/:id', function(req, res, next){
 
 // **delete a ninja from the db
 router.delete('/ninjas/:id', function(req, res, next){
-// a DELET request for the router(/is the route which is refer to the get request/:and the parameter of a specific ninja 
-// callback function(pass in a request and response object)) 
+/* a DELETE request for the router(/is the route which is refer 
+   to the get request/:and the parameter of a specific ninja 
+ callback function(pass in a request and response object)) */
 
     Ninja.findByIdAndRemove({_id: req.params.id}).then(function(ninja){
         res.send(ninja);
