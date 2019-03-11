@@ -53,3 +53,13 @@ npm init -y
 Making an application on node.js using express.
 Express is a package that can be install on nodeJS which is going 
 to make things such as listening to request and handling them.
+
+To install express:
+npm install express --save
+- this with save into the dependencies in the package.json file
+
+Nodemon
+npm install nodemon --save-dev
+- its a dev dependencies that isn't required for the application to run
+- its a dependency that is going to speed up the development process
+
