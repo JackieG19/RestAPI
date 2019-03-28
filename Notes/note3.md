@@ -52,6 +52,27 @@ npm install nodemon --save-dev
 - its a dependency that is going to speed up the development process
 
 ___
+_what is Mongoose?_
+
+[Mongoose](https://www.npmjs.com/package/mongoose) is a MongoDB object modeling tool designed to work in an asynchronous environment.
+```
+// Importing
+
+// Using Node.js `require()`
+const mongoose = require('mongoose');
+ 
+// Using ES6 imports
+import mongoose from 'mongoose';
+
+// Connecting to MongoDB
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/my_database', {useNewUrlParser: true})
+```
+___
+
+using c9 - need to install mongodb different 
+- [Setting Up MongoDB](https://community.c9.io/t/setting-up-mongodb/1717)
+___
 
 _what is body-parser?_
 - In order to read HTTP POST data , we have to use "body-parser" node module which 
